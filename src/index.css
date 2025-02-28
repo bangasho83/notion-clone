@@ -1,4 +1,4 @@
-/* General App Styling */
+/* ✅ General App Styling */
 body {
   font-family: "Inter", sans-serif;
   background-color: #1e1e1e;
@@ -7,13 +7,13 @@ body {
   padding: 0;
 }
 
-/* Layout */
+/* ✅ Layout */
 .app-container {
   display: flex;
   height: 100vh;
 }
 
-/* Sidebar */
+/* ✅ Sidebar */
 .sidebar {
   width: 260px;
   background: #111;
@@ -92,7 +92,7 @@ body {
   cursor: pointer;
 }
 
-/* Editor Area */
+/* ✅ Editor Area */
 .editor-wrapper {
   flex-grow: 1;
   padding: 50px;
@@ -101,7 +101,7 @@ body {
   overflow-y: auto;
 }
 
-/* Page Title */
+/* ✅ Page Title */
 .page-title-input {
   font-size: 28px;
   font-weight: bold;
@@ -114,25 +114,116 @@ body {
   padding: 5px;
 }
 
-/* Text Editor */
-.editor-textarea {
+/* ✅ Remove Unwanted Borders */
+.editor-container {
   width: 100%;
   min-height: 400px;
   background: transparent;
-  border: none;
   color: white;
   font-size: 16px;
   line-height: 1.6;
   padding: 10px;
   outline: none;
-  resize: none;
-  font-family: "Inter", sans-serif;
-  text-align: left;
+  border: none; 
 }
 
-/* Empty State */
+/* ✅ Fix ProseMirror Editor Styling */
+.ProseMirror {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: white;
+  line-height: 1.6;
+  padding: 10px;
+  min-height: 300px;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  
+}
+.ProseMirror p.is-editor-empty:first-child {
+  position: relative; /* create a positioning context */
+}
+
+/* ✅ Show Placeholder When Editor is Empty */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: "Start typing here...";
+  color: #888;
+  font-size: 16px;
+  font-style: italic;
+  display: inline-block;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0px;
+}
+
+/* ✅ Ensure Cursor Appears at Start */
+.ProseMirror:focus::before {
+  display: none;
+}
+
+.ProseMirror:empty::before {
+  content: "Start typing here...";
+  color: #888;
+  font-size: 16px;
+  font-style: italic;
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  top: 10px; /* Adjust based on padding */
+  left: 10px; /* Adjust based on padding */
+}
+
+
+/* ✅ Empty State */
 .empty-state {
   text-align: center;
   font-size: 16px;
   color: #aaa;
+}
+
+/* ✅ Slash Command Menu */
+.slash-menu {
+  position: absolute;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 10px;
+  min-width: 180px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  display: none;
+}
+
+/* ✅ Show Slash Command Menu */
+.slash-menu.show {
+  opacity: 1;
+  transform: scale(1);
+  display: block;
+}
+
+/* ✅ Slash Command Items */
+.menu-item {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* ✅ Hover State for Menu Items */
+.menu-item:hover {
+  background: #444;
+  color: white;
+}
+
+/* ✅ Active Slash Command Item */
+.menu-item.active {
+  background: #635dff;
+  color: white;
+  font-weight: bold;
 }
