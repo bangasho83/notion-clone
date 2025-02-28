@@ -1,0 +1,138 @@
+/* General App Styling */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #111;
+  padding: 15px;
+  border-right: 1px solid #333;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #bbb;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.add-page {
+  background: #635dff;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.add-page:hover {
+  background: #5149e2;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.sidebar li {
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.sidebar li.active {
+  background: #292929;
+  font-weight: bold;
+}
+
+.sidebar li:hover {
+  background: #222;
+}
+
+.page-title {
+  flex-grow: 1;
+  color: #fff;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  outline: none;
+}
+
+.delete-btn {
+  border: none;
+  background: none;
+  color: red;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Editor Area */
+.editor-wrapper {
+  flex-grow: 1;
+  padding: 50px;
+  max-width: 800px;
+  margin: auto;
+  overflow-y: auto;
+}
+
+/* Page Title */
+.page-title-input {
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  color: white;
+  outline: none;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px;
+}
+
+/* Text Editor */
+.editor-textarea {
+  width: 100%;
+  min-height: 400px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 10px;
+  outline: none;
+  resize: none;
+  font-family: "Inter", sans-serif;
+  text-align: left;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  font-size: 16px;
+  color: #aaa;
+}
